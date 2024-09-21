@@ -5,14 +5,14 @@ import pages.BaseFixture;
 
 import static com.codeborne.selenide.Selenide.closeWindow;
 
-public class YouTubeTests extends BaseFixture {
+public class YouTubeTest extends BaseFixture {
 
     @BeforeClass(description = "Open YouTube page, maximaze browser window")
     void setUp() {
         openYouTube();
     }
 
-    @Test(description = "YouTube page end to end test")
+    @Test(description = "YouTube page - end to end test")
     public void youTubeSearchTest() {
         pages.youTubePage.isOpened()
                 .enterRandomNumbersInSearch()
@@ -25,7 +25,7 @@ public class YouTubeTests extends BaseFixture {
                 .checkSignInText();
     }
 
-    @AfterClass
+    @AfterClass(description = "Close browser")
     private void tearDown() {
         closeWindow();
     }
